@@ -22,8 +22,8 @@ public class Bot extends TelegramLongPollingBot {
 
     private Logger log;
 
-    public Bot() {
-        log = LoggerFactory.getLogger(Application.class);
+    public Bot(Logger log) {
+        this.log = log;
     }
 
     /* Перегружаем метод интерфейса LongPollingBot

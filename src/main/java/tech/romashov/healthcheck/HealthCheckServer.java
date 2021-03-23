@@ -11,10 +11,10 @@ public class HealthCheckServer {
     public HealthCheckServer() throws Exception {
         Server server = new Server();
         ServerConnector connector = new ServerConnector(server);
-        if (System.getenv("PORT").equals("") || System.getenv("PORT").equals(null)) {
+        if (System.getenv("PORT").equals("") || System.getenv("PORT") == null) {
             connector.setPort(8081);
         } else {
-            connector.setPort(Integer.valueOf(System.getenv("PORT")));
+            connector.setPort(Integer.parseInt(System.getenv("PORT")));
         }
         server.setConnectors(new Connector[] {connector});
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
